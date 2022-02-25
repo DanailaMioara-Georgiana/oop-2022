@@ -1,0 +1,121 @@
+EX2.Lab1
+#include <iostream>
+#include <stdio.h>
+using namespace std;
+int transformaSir(char *s)
+{ int nr=0;
+int i;
+for(i=0; s[i]!=NULL && s[i]!='\n'; i++)
+    nr=nr*10+(s[i]-'0');
+return nr;
+}
+
+int main()
+{
+ FILE * f;
+ int nr1, suma=0;
+    char sir[256];
+    f=fopen("ini.txt", "r");
+    if(f==NULL)
+
+        printf("eroare");
+    else
+
+        while(fgets(sir, sizeof(sir),f))
+         suma=suma+ transformaSir(sir);
+
+         printf("suma este %d", suma);
+    return 0;
+}
+
+---------------------------------------------------------------------------
+EX3.Lab1
+#include <iostream>
+#include <stdio.h>
+#include <cstring>
+using namespace std;
+
+int main()
+{  char a[100][100], s[256], ch[256], aux[256];
+    sin.get(s,256);
+    int n=strlen(s);
+    int i, k=1;
+     strcpy(ch, "");
+    for(i=0; i< strlen(s); i++)
+    {
+        if (s[i]==' ' && s[i-1]!=' ')
+        {
+            strcpy(a[k], ch);
+            k++;
+            strcpy(ch, "");
+        }
+      else
+            if( s[i]!=' ')
+      {   aux[0]=s[i];
+                strcat(ch, aux);
+
+    }}
+     for(i=1; i<k; i++)
+        for(int j=i+1; j<=k; j++)
+             if(strlen( a[i])>strlen(a[j]))
+              { strcpy(aux,a[i]);
+                strcpy(a[i],a[j]);
+                strcpy(a[j],aux);
+              }
+              else if(strlen(a[i])==strlen(a[j]))
+                         if (strcmp(a[i], a[j])<0)
+                         {strcpy(aux,a[i]);
+                          strcpy(a[i],a[j]);
+                          strcpy(a[j],aux);
+
+                         }
+
+
+   for(i=k; i>=1; i--)
+     cout<< a[i]<<endl;
+    return 0;
+}
+
+--------------------------------------------------------------------------------------------------------------
+//EX4. Lab1
+#include <iostream>
+
+using namespace std;
+
+
+
+bool isPrime(int n)
+
+{
+
+    for (int tr = 2; tr < n /2; tr++)
+
+        if ((n % tr ) == 0)
+
+            return false;
+
+    return true;
+
+}
+
+int main()
+
+{
+
+    int n;
+
+    std::cout << "Enter a number:";
+
+    std::cin >> n;
+
+    if (isPrime(n))
+
+        std::cout << n << " is prime !";
+
+    else
+
+        std::cout << n << " is NOT prime !";
+
+    return 0;
+
+}
